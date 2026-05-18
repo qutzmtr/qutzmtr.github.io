@@ -1,2 +1,2 @@
-这里是开发中的柠檬资源站。
-This is the LemonCraft resource station under development.
+柠影浮光官方网站
+Lightdrift
