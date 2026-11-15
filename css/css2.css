@@ -1,0 +1,846 @@
+/* ============================================================
+   柠影浮光 Lightdrift — v1.3.0 增量样式
+   在 css1.css 之后加载，只做新增与覆盖，不改动原有视觉规范。
+   ============================================================ */
+
+/* ---------- 页首：子页面常驻深色导航 ---------- */
+.site-header.is-solid {
+    height: 64px;
+    background: rgba(8, 13, 18, 0.94);
+    border-bottom-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Hero：始于敢想（背景图 + 白字） ---------- */
+.hero {
+    padding: 132px 24px 104px;
+    background:
+        radial-gradient(72% 54% at 50% 48%, rgba(16, 8, 3, 0.55) 0%, rgba(16, 8, 3, 0.16) 68%, rgba(16, 8, 3, 0) 100%),
+        linear-gradient(180deg,
+            rgba(18, 9, 3, 0.66) 0%,
+            rgba(18, 9, 3, 0.12) 26%,
+            rgba(18, 9, 3, 0.30) 62%,
+            rgba(10, 5, 2, 0.68) 100%),
+        url("../img/bg2.jpg") no-repeat center 58% / cover;
+    box-shadow: none;
+}
+
+.hero::before {
+    content: none;
+}
+
+.hero::after {
+    content: none;
+}
+
+.hero-kicker {
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+.hero-title {
+    margin-top: 16px;
+    font-size: clamp(58px, 10.5vw, 138px);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-indent: 0.1em;
+    color: #ffffff;
+    text-shadow: 0 18px 46px rgba(0, 0, 0, 0.42);
+    filter: none;
+}
+
+.hero-rule {
+    display: block;
+    width: 96px;
+    height: 3px;
+    margin-top: 28px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.85) 45%,
+        rgba(255, 230, 0, 0.9));
+}
+
+.hero-sub {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* 滚动提示 */
+.hero .scroll-hint {
+    color: rgba(255, 255, 255, 0.82);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.hero .scroll-hint .arrow {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- 滚动后的页首：深绿导航条（不用黑灰） ---------- */
+.site-header.is-glass,
+.site-header.is-solid,
+.site-header.is-open {
+    background: rgba(9, 52, 20, 0.94);
+    border-bottom-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 34px rgba(4, 24, 9, 0.30);
+}
+
+.site-header.is-open .site-nav {
+    background: rgba(9, 48, 19, 0.97);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* ---------- 首页：圣诞活动入口（macOS 弹窗样式） ---------- */
+.xmas-card {
+    position: absolute;
+    top: 96px;
+    right: clamp(16px, 5vw, 64px);
+    z-index: 4;
+    width: 320px;
+    max-width: calc(100% - 32px);
+    display: block;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 24px 54px rgba(0, 0, 0, 0.34), 0 2px 6px rgba(0, 0, 0, 0.16);
+    animation: xmasIn 0.75s 0.2s ease both;
+    transition: transform 0.26s ease, box-shadow 0.26s ease;
+}
+
+.xmas-card:hover,
+.xmas-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 64px rgba(0, 0, 0, 0.42), 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.xmas-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 34px;
+    padding: 0 12px;
+    background: #f1f2f4;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.xmas-dots {
+    display: inline-flex;
+    gap: 6px;
+    flex: 0 0 auto;
+}
+
+.xmas-dots i {
+    display: block;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.xmas-dots .is-red {
+    background: #ff5f57;
+}
+
+.xmas-dots .is-yellow {
+    background: #febc2e;
+}
+
+.xmas-dots .is-green {
+    background: #28c840;
+}
+
+.xmas-bar-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #737b85;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+}
+
+.xmas-main {
+    display: grid;
+    grid-template-columns: 38px 1fr 16px;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 16px 16px;
+    background: #ffffff;
+}
+
+.xmas-tree {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: linear-gradient(160deg, #0f2a2a, #14343a);
+}
+
+.xmas-tree svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+}
+
+.xmas-copy strong {
+    display: block;
+    color: #151719;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.xmas-date {
+    display: block;
+    margin-top: 4px;
+    color: #7a828c;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.xmas-go {
+    color: #c2c8ce;
+    font-size: 15px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.xmas-card:hover .xmas-go,
+.xmas-card:focus-visible .xmas-go {
+    transform: translateX(3px);
+    color: var(--accent);
+}
+
+@keyframes xmasIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- 团队账号：1 + 2 布局 ---------- */
+.account-card.is-featured {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+    min-height: 172px;
+    grid-template-columns: 96px 1fr;
+    gap: 24px;
+    padding: 26px 30px;
+    background:
+        linear-gradient(135deg, rgba(47, 143, 203, 0.10), rgba(231, 184, 95, 0.10)),
+        #ffffff;
+}
+
+.account-card.is-featured:hover {
+    border-color: rgba(47, 143, 203, 0.38);
+}
+
+.account-card.is-featured .account-avatar {
+    width: 96px;
+    box-shadow: inset 0 0 0 7px #ffffff, 0 8px 22px rgba(15, 23, 42, 0.10);
+}
+
+.account-card.is-featured .account-copy strong {
+    font-size: 24px;
+}
+
+.account-card.is-featured .account-copy span {
+    font-size: 15px;
+}
+
+/* ---------- 团队公告（沿用日志卡片外观，改为可点击） ---------- */
+.notice-section {
+    padding-bottom: 180px;
+}
+
+.notice-card {
+    display: block;
+}
+
+.notice-card .notice-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.notice-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    color: var(--accent-strong);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.notice-more i {
+    font-style: normal;
+    transition: transform 0.2s ease;
+}
+
+.notice-card:hover .notice-more i,
+.notice-card:focus-visible .notice-more i {
+    transform: translateX(4px);
+}
+
+/* ---------- 底部：版本号与 GitHub ---------- */
+.footer .version {
+    font-weight: 400;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    padding-bottom: 1px;
+    transition: border-color 0.2s ease;
+}
+
+.footer a.version:hover,
+.footer a.version:focus-visible {
+    border-bottom-color: var(--gold);
+}
+
+.gh-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+}
+
+.gh-mark {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+    flex: 0 0 auto;
+}
+
+.gh-link:hover,
+.gh-link:focus-visible {
+    color: #ffffff;
+}
+
+/* ---------- 子页面：更新日志 / 公告详情 ---------- */
+.page-hero {
+    position: relative;
+    padding: 136px 24px 64px;
+    overflow: hidden;
+    color: #ffffff;
+    background:
+        radial-gradient(880px 420px at 6% 0%, rgba(5, 38, 11, 0.34), transparent 72%),
+        linear-gradient(115deg, #0B6B21 0%, #88BD1E 100%);
+    border-bottom: 0;
+}
+
+.page-hero::after {
+    content: none;
+}
+
+.page-hero-inner {
+    position: relative;
+    z-index: 1;
+    width: min(880px, 100%);
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+    color: #ffffff;
+}
+
+.page-kicker {
+    display: block;
+    color: rgba(255, 230, 0, 0.9);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.page-hero h1 {
+    margin-top: 10px;
+    font-size: clamp(30px, 4.4vw, 44px);
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    filter: none;
+    text-shadow: 0 6px 22px rgba(0, 0, 0, 0.24);
+}
+
+.page-hero .page-desc {
+    margin-top: 12px;
+    max-width: 60ch;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+    line-height: 1.8;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.page-hero code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    font-size: 0.92em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.page-meta .badge {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+}
+
+.page-meta .page-date {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.page-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.page-body {
+    width: min(880px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 48px 0 88px;
+}
+
+/* ---------- Markdown 正文排版 ---------- */
+.md-body {
+    color: #343b43;
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.md-body > * + * {
+    margin-top: 12px;
+}
+
+.md-body h2,
+.md-body h3,
+.md-body h4 {
+    color: #151719;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.md-body h2 {
+    margin-top: 26px;
+    font-size: 20px;
+}
+
+.md-body h3 {
+    margin-top: 22px;
+    font-size: 17px;
+}
+
+.md-body h4 {
+    margin-top: 18px;
+    font-size: 15px;
+}
+
+.md-body h2:first-child,
+.md-body h3:first-child,
+.md-body h4:first-child {
+    margin-top: 0;
+}
+
+.md-body ul,
+.md-body ol {
+    padding-left: 0;
+    list-style: none;
+}
+
+.md-body ul li,
+.md-body ol li {
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.85;
+}
+
+.md-body ul li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.78em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.md-body ol {
+    counter-reset: mdol;
+}
+
+.md-body ol li {
+    counter-increment: mdol;
+}
+
+.md-body ol li::before {
+    content: counter(mdol) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-strong);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.md-body strong {
+    color: #151719;
+    font-weight: 700;
+}
+
+.md-body a {
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.md-body code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: #f1f5f9;
+    color: #1f2933;
+    font-size: 0.92em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.md-body pre {
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #f7fafc;
+    overflow-x: auto;
+}
+
+.md-body pre code {
+    padding: 0;
+    background: transparent;
+}
+
+.md-body blockquote {
+    padding: 10px 0 10px 14px;
+    border-left: 3px solid var(--accent);
+    background: #f8fafc;
+    color: #5b6672;
+}
+
+.md-body hr {
+    height: 1px;
+    border: 0;
+    margin: 22px 0;
+    background: var(--line);
+}
+
+/* ---------- 更新日志列表 ---------- */
+.changelog-list {
+    display: grid;
+    gap: 20px;
+}
+
+.changelog-item {
+    padding: 26px 26px 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.changelog-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.changelog-version {
+    color: #151719;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.changelog-date {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.changelog-summary {
+    margin-top: 10px;
+    color: #4c5561;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.changelog-item .md-body {
+    margin-top: 18px;
+}
+
+.changelog-state {
+    padding: 22px 24px;
+    border: 1px dashed #d9e1e9;
+    border-radius: var(--radius);
+    background: #fbfdff;
+    color: #5b6672;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.changelog-state code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: #eef3f8;
+    font-size: 0.92em;
+}
+
+.page-footnote {
+    margin-top: 26px;
+    color: #8b939c;
+    font-size: 12.5px;
+    line-height: 1.8;
+}
+
+/* ---------- 公告详情 ---------- */
+.notice-detail {
+    padding: 30px 30px 28px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.notice-lead {
+    color: #343b43;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.notice-block {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+}
+
+.notice-block h3 {
+    margin-bottom: 12px;
+    color: #151719;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.notice-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.notice-block ul li {
+    position: relative;
+    padding-left: 20px;
+    color: #343b43;
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.notice-block ul li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.78em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.notice-contact {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.contact-item {
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fbfdff;
+}
+
+.contact-item span {
+    display: block;
+    color: #8b939c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.contact-item strong {
+    display: block;
+    margin-top: 4px;
+    color: #151719;
+    font-size: 15px;
+    font-weight: 700;
+    word-break: break-all;
+}
+
+/* ---------- 响应式补充 ---------- */
+@media (max-width: 860px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        padding: 92px 18px 96px;
+    }
+
+    .xmas-card {
+        position: relative;
+        top: auto;
+        right: auto;
+        order: -1;
+        width: min(340px, 100%);
+        max-width: 100%;
+        margin: 0 auto 34px;
+    }
+
+    .hero-kicker {
+        margin-top: 0;
+    }
+
+    .notice-section {
+        padding-bottom: 120px;
+    }
+}
+
+@media (max-width: 700px) {
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-card.is-featured {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 84px 16px 88px;
+        min-height: 94vh;
+        min-height: 94svh;
+    }
+
+    .hero-title {
+        letter-spacing: 0.08em;
+        text-indent: 0.08em;
+    }
+
+    .hero-sub {
+        font-size: 13px;
+        letter-spacing: 0.02em;
+    }
+
+    .account-card.is-featured {
+        grid-template-columns: 68px 1fr;
+        gap: 16px;
+        padding: 20px;
+        min-height: 132px;
+    }
+
+    .hero .scroll-hint {
+        bottom: 22px;
+    }
+
+    .account-card.is-featured .account-avatar {
+        width: 68px;
+        box-shadow: inset 0 0 0 5px #ffffff, 0 6px 16px rgba(15, 23, 42, 0.10);
+    }
+
+    .account-card.is-featured .account-copy strong {
+        font-size: 19px;
+    }
+
+    .account-card.is-featured .account-copy span {
+        font-size: 13px;
+    }
+
+    .footer span,
+    .footer a {
+        display: block;
+    }
+
+    .gh-link {
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .page-hero {
+        padding: 108px 18px 40px;
+    }
+
+    .page-hero .back-link {
+        margin-bottom: 18px;
+    }
+
+    .page-body {
+        width: min(100% - 28px, 880px);
+        padding: 32px 0 64px;
+    }
+
+    .changelog-item,
+    .notice-detail {
+        padding: 20px 18px;
+    }
+
+    .changelog-head {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .changelog-version {
+        font-size: 19px;
+    }
+
+    .notice-contact {
+        grid-template-columns: 1fr;
+    }
+}
